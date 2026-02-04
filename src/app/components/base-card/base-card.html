@@ -1,0 +1,11 @@
+<div class="base-card-container">
+    <div class="title-container">
+        <img [src]="icon || 'assets/images/svgs/plus-solid-full-purple.svg'" alt="">
+        
+        <h1>{{ name || 'Lorem ipsum title' | uppercase }}</h1>
+    </div>
+
+    <div class="content-container">
+        <ng-content></ng-content>
+    </div>
+</div>

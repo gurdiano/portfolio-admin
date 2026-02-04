@@ -1,0 +1,19 @@
+<app-base-card name="remove skill" icon="assets/images/svgs/microchip-solid-full-red.svg">
+    <!-- dropdown -->
+    <form class="technology-form" [formGroup]="skillForm" (ngSubmit)= "onSubmit()">
+        <!-- choose skill -->
+        <h2 class="h2-label">Choose a Skill</h2>
+        <app-filter-input
+            [options]="skillsOptions()"
+            (onSelected)="handleSelection($event)">
+        </app-filter-input>
+
+        <!-- submit -->
+        <div class="button-row">
+            <button matButton="filled" type="submit" [disabled]="skillForm.invalid">Remove</button>
+            <!-- <button matButton="filled" type="submit">Add</button> -->
+        </div>
+    </form>    
+
+    <app-response-msg [error]="error" [success]="success"></app-response-msg>
+</app-base-card>

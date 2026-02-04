@@ -1,0 +1,43 @@
+/* body */
+.base-card-container {
+    background-color: var(--color-base-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 2rem auto;
+    border: 1px solid #ffffff1a;
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+}
+/* title */
+.title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* border: 1px solid red; */
+}
+.title-container h1 {
+    font-size: 18px;
+    color: var(--tc);
+    margin: 0;
+}
+.title-container img {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+/* content */
+.content-container {
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid #ffffff1a; */
+}
+
+
+.teste {
+    height: 30rem;
+}

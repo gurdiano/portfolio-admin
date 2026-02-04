@@ -1,0 +1,7 @@
+:host {
+    --color-primary: #E81123; 
+}
+/* submit-button */
+.button-row button {
+    background-color: var(--color-primary);
+}

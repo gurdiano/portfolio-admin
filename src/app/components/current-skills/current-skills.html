@@ -1,0 +1,55 @@
+<app-base-card name="current skills" icon="assets/images/svgs/microchip-solid-full-purple.svg">    
+    @if (technologies(); as tech) {
+        <!-- Main -->
+        @if (tech | filterByIds:config().mainStack || []; as mainTech) {
+            <h2 class="h2-label">Main</h2>
+            <!-- <h1>{{ mainTech[0].progress | json }}</h1> -->
+            @for (item of mainTech; track item.progress) {
+                <!-- tech -->
+                <div class="tec-container">
+                    <div class="name">
+                        <img [src]="bucket + item.tech.iconPath || 'assets/images/tecs/code.png'"> 
+                        <h1>{{ item.tech.name }}</h1>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="bar" [style.width.%]="item.progress"></div>
+                    </div>
+                </div>
+            } 
+        }  
+        <!-- Secondary -->
+        @if (tech | filterByIds:config().secondaryStack || []; as secTech) {
+            <h2 class="h2-label">Secondary</h2>
+            @for (item of secTech; track item.progress) {
+                <!-- tech -->
+                <div class="tec-container">
+                    <div class="name">
+                        <img [src]="bucket + item.tech.iconPath || 'assets/images/tecs/code.png'"> 
+                        <h1>{{ item.tech.name }}</h1>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="bar" [style.width.%]="item.progress"></div>
+                    </div>
+                </div>
+            } 
+        }  
+        <!-- Others -->
+        @if (config().mainStack && config().secondaryStack) {
+            @if ( tech | excludeByIds:config().mainStack.concat(config().secondaryStack); as othersTech ) {
+                <h2 class="h2-label">Others</h2>
+                @for (item of othersTech; track item.progress) {
+                    <!-- tech -->
+                    <div class="tec-container">
+                        <div class="name">
+                            <img [src]="bucket + item.tech.iconPath || 'assets/images/tecs/code.png'"> 
+                            <h1>{{ item.tech.name }}</h1>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="bar" [style.width.%]="item.progress"></div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    }
+</app-base-card>

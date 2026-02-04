@@ -1,0 +1,70 @@
+:host {
+    --color-primary: #36dea1;
+}
+/* uploaded-container */
+.uploaded-container{
+    display: block;
+    margin-bottom: 1.5rem;
+}
+.photo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+.photo-container img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+.photo-container h2 {
+    font-size: 15px;
+    color: var(--tc);
+}
+/* close-contianer */
+.close-container {
+    margin-left: auto;
+    cursor: pointer;
+}
+.close-container img{
+    width: 1.3rem;
+    height: auto;
+}
+/* drop-area */
+.drop-zone {
+    border: 2px dashed #ffffff80;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--color-bg-default-input);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 20rem;
+    margin-bottom: 2rem;
+}
+.drop-zone-active {
+    transform: scale(1.02);
+    border: 2px solid #3f51b5;
+}
+.upload-icon {
+    width: 3rem;
+    fill: var(--color-upload);
+}
+.drop-zone p span {
+    color: #3f51b5;
+    text-decoration: underline;
+}
+.drop-zone img {
+    width: 3rem;
+    height: auto;
+}
+/* submit-button */
+.button-row button {
+    background-color: var(--color-primary);
+}

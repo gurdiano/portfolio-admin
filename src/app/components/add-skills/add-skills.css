@@ -1,0 +1,38 @@
+:host {
+    --color-primary: #36DEA1;
+    --color-plus-new: #61A9F4;   
+}
+/* plus-container */
+.new {
+    color: var(--color-plus-new);
+}
+.new:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.lvl {
+    color: var(--color-highlight);
+    background-color: #291E15;
+}
+/* skill level */
+.skill-level-container {
+    display: flex;
+    flex-direction: column;
+}
+/* bar */
+.progress-bar-container {
+    background-color: var(--color-default);
+    height: 3.2rem;
+    /* flex: 1; */
+    border: 1px solid var(--color-default);
+}
+.progress-bar-container .bar{
+    height: 100%;
+    width: 0;
+    background-color: var(--color-highlight);
+    /* transition: width 1s ease-in-out; */
+}
+/* submit-button */
+.button-row button {
+    background-color: var(--color-primary);
+}

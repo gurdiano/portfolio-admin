@@ -1,0 +1,40 @@
+<app-base-card name="add a new skill" icon="assets/images/svgs/microchip-solid-full-green.svg">
+    <!-- dropdown -->
+    <form class="technology-form" [formGroup]="skillForm" (ngSubmit)= "onSubmit()">
+        <!-- choose skill -->
+        <!-- label -->
+         <div class="plus-container">
+            <h2 class="h2-label">Choose a Technology</h2>
+            <h2 class="plus new" (click)="scrollToElement()">+ new technology</h2>
+         </div>
+        <!-- technology input -->
+        <app-filter-input 
+            [options]="technologyOptions()"
+            (onSelected)="handleSelection($event)">
+        </app-filter-input>
+        
+        <!-- skill level -->
+        <div class="skill-level-container">
+            <div class="plus-container">
+                <h2 class="h2-label">set skill level</h2>
+                <h2 class="plus lvl">level · {{ item_progress() }}%</h2>
+            </div>
+
+            <div class="progress-bar-container" 
+                #barContainer
+                (mousedown)="startDragging($event)"
+                (click)="updateProgress($event)">
+
+                <div class="bar" [style.width.%]="item_progress()"></div>
+            </div>
+        </div>
+
+        <!-- submit -->
+        <div class="button-row">
+            <button matButton="filled" type="submit" [disabled]="skillForm.invalid">Add</button>
+            <!-- <button matButton="filled" type="submit">Add</button> -->
+        </div>
+    </form>
+
+    <app-response-msg [success]="success" [error]="error"></app-response-msg>
+</app-base-card>

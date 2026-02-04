@@ -1,0 +1,37 @@
+<app-base-card name="link skill" icon="assets/images/svgs/link-solid-full-green.svg">
+    <form class="technology-form" [formGroup]="linkForm" (ngSubmit)="onSubmit()">
+        <!-- skill input -->
+        <h2 class="h2-label">Choose a skill</h2>
+        <app-filter-input 
+            (onSelected)="handleSkillSelection($event)"
+            [options]="skillOptions()">
+        </app-filter-input>
+
+        <!-- project input -->
+        <h2 class="h2-label">Link projects</h2>
+        <app-filter-input 
+            (onSelected)="handleProjectSelection($event)"
+            [options]="projectOptions()">
+        </app-filter-input>
+
+        @for(project of linkedProjects; track project.id){
+            <div class="project-container">
+                <div class="avatar-icon">
+                    <img [src]="bucket + project.icon || 'assets/images/tecs/code.png'">
+                </div>
+
+                <h1> {{ project.name }} </h1>
+
+                <div class="close-container" (click)="closeOnClick(project.id)">
+                    <img src="assets/images/svgs/xmark-solid-full.svg">
+                </div>
+            </div>
+        }  
+        
+        <!-- submit -->
+        <div class="button-row">
+            <button matButton="filled" type="submit" [disabled]="linkForm.invalid">Save</button>
+        </div>
+    </form>
+    <app-response-msg [success]="success" [error]="error"></app-response-msg>
+</app-base-card>

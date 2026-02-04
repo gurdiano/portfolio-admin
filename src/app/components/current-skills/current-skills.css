@@ -1,0 +1,53 @@
+:host {
+    --width: 100%;
+    --height: 21rem;
+    --name-container-height: 3.5rem;
+    --ml: 1.5rem;
+    --icon-tec-size: 1.2rem;
+}
+/* tec-container */
+.tec-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.6rem;
+}
+/* name + icon */
+.tec-container .name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 20%;
+}
+.tec-container .name img {
+    width: var(--icon-tec-size);
+    height: var(--icon-tec-size);
+    margin-left: calc(2 * var(--ml));
+    margin-right: 0.2rem;
+}
+.tec-container .name h1 {
+    font-size: var(--ts-20);
+    color: var(--tc-75);
+    margin: 0;
+    font-weight: 400;
+    margin-right: 3rem;
+}
+/* bar */
+.progress-bar-container {
+    background-color: var(--color-default);
+    height: 2rem;
+    flex: 1;
+    border: 1px solid var(--color-default);
+    margin-right: calc(2 * var(--ml));
+}
+.progress-bar-container .bar{
+    height: 100%;
+    width: 0;
+    background-color: var(--color-highlight);
+    transition: width 1s ease-in-out;
+}
+/* h2-label */
+.h2-label {
+    margin-top: 2rem;
+}

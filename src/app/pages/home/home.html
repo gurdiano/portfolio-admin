@@ -1,0 +1,131 @@
+<!-- <router-outlet /> -->
+
+<div class="page-container">
+    <!-- label page -->
+    <div class="portfolioadmin-container">
+        <img src="assets/code-solid-2.png" alt="">
+        <h1>PortfolioAdmin</h1>
+
+        <div class="logout-container" (click)="onLogout()">
+            <img src="assets/images/svgs/arrow-right-to-bracket-solid-full.svg" alt="">
+        </div>
+    </div>
+
+    <!-- accordion -->
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <!-- item-1 -->
+        <div class="accordion-item">
+            <!-- header -->
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    <!-- imgs-header -->
+                    <div class="topic-bar-container">
+                        <div class="overlay-card">
+                            
+                            <div class="label-container">
+                                <svg class="label-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M288.4 72.3C308 61.2 332 61.2 351.6 72.3L527.6 172C547.6 183.4 560 204.6 560 227.7L560 425.1C560 448.1 547.6 469.4 527.6 480.8L351.6 580.5C332 591.6 308 591.6 288.5 580.5L112.5 480.8C92.4 469.5 80 448.2 80 425.2L80 227.8C80 204.8 92.4 183.5 112.4 172.1L288.4 72.4zM166.6 219.6C157.8 216.5 147.8 219.9 142.8 228.2C137.8 236.5 139.6 246.9 146.4 253.2L149.6 255.6L299.8 345.8L299.8 494.5C299.8 505.5 308.8 514.5 319.8 514.5C330.8 514.5 339.8 505.5 339.8 494.5L339.8 345.8L490.1 255.6C499.6 249.9 502.7 237.6 497 228.2C491.3 218.8 479 215.7 469.6 221.3L319.9 311.1L170.2 221.3L166.5 219.6z"/></svg>
+                                <h1>PROJECTS</h1>
+                            </div>
+
+                            <div class="img-container">
+                                <img src="" alt="">
+                            </div>
+                            <div class="chevron-container">
+                                <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/></svg>
+                            </div>
+                        </div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+            </h2>
+            <!-- content -->
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <h1>Build Your Project</h1>
+                    <h2>Add, edit, and manage your projects, including updating project photos and details.</h2>
+
+                    <app-projects></app-projects>
+                </div>
+            </div>
+        </div>
+        <!-- item-2 -->
+        <div class="accordion-item">
+            <!-- header  -->
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    <!-- photos header -->
+                    <div class="topic-bar-container">
+                        <div class="overlay-card">
+                            <div class="label-container">
+                                <svg class="label-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M240 88C240 74.7 229.3 64 216 64C202.7 64 192 74.7 192 88L192 128C156.7 128 128 156.7 128 192L88 192C74.7 192 64 202.7 64 216C64 229.3 74.7 240 88 240L128 240L128 296L88 296C74.7 296 64 306.7 64 320C64 333.3 74.7 344 88 344L128 344L128 400L88 400C74.7 400 64 410.7 64 424C64 437.3 74.7 448 88 448L128 448C128 483.3 156.7 512 192 512L192 552C192 565.3 202.7 576 216 576C229.3 576 240 565.3 240 552L240 512L296 512L296 552C296 565.3 306.7 576 320 576C333.3 576 344 565.3 344 552L344 512L400 512L400 552C400 565.3 410.7 576 424 576C437.3 576 448 565.3 448 552L448 512C483.3 512 512 483.3 512 448L552 448C565.3 448 576 437.3 576 424C576 410.7 565.3 400 552 400L512 400L512 344L552 344C565.3 344 576 333.3 576 320C576 306.7 565.3 296 552 296L512 296L512 240L552 240C565.3 240 576 229.3 576 216C576 202.7 565.3 192 552 192L512 192C512 156.7 483.3 128 448 128L448 88C448 74.7 437.3 64 424 64C410.7 64 400 74.7 400 88L400 128L344 128L344 88C344 74.7 333.3 64 320 64C306.7 64 296 74.7 296 88L296 128L240 128L240 88zM224 192L416 192C433.7 192 448 206.3 448 224L448 416C448 433.7 433.7 448 416 448L224 448C206.3 448 192 433.7 192 416L192 224C192 206.3 206.3 192 224 192zM240 240L240 400L400 400L400 240L240 240z"/></svg>
+
+                                <h1>SKILLS</h1>
+                            </div>
+
+                            <div class="img-container">
+                                <img src="" alt="">
+                            </div>
+                            <div class="chevron-container">
+                                <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/></svg>
+                            </div>
+                        </div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+            </h2>
+            <!-- content -->
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <h1>Build Your Stack</h1>
+                    <h2>Create technology entries by associating names with your pre-uploaded library of icons.</h2>
+
+                    <app-skills></app-skills>
+                </div>
+            </div>
+        </div>
+        <!-- item-3 -->
+        <div class="accordion-item">
+            <!-- header  -->
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    <!-- photos header -->
+                    <div class="topic-bar-container">
+                        <div class="overlay-card">
+                            <div class="label-container">
+                                <svg class="label-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M528 320C528 205.1 434.9 112 320 112C205.1 112 112 205.1 112 320C112 434.9 205.1 528 320 528C434.9 528 528 434.9 528 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/></svg>
+
+                                <h1>ROLES</h1>
+                            </div>
+                            
+                            <div class="img-container">
+                                <img src="" alt="">
+                            </div>
+                            <div class="chevron-container">
+                                <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/></svg>
+                            </div>
+                        </div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+            </h2>
+            <!-- content -->
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <h1>Role Assignment</h1>
+                    <h2>Link roles to projects to define responsibilities and organize the structure.</h2>
+
+                    <app-roles></app-roles>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

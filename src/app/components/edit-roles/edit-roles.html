@@ -1,0 +1,53 @@
+<app-base-card name="edit role" icon="assets/images/svgs/screwdriver-wrench-solid-full-green.svg">
+    <form class="technology-form" [formGroup]="roleForm" (ngSubmit)= "onSubmit()">
+        <!-- input role -->
+        <h2 class="h2-label">Choose a Role</h2>
+        <app-filter-input 
+            [options]="roleOptions()"
+            (onSelected)="handleRoleSelection($event)">
+        </app-filter-input>
+
+        <!-- skill level -->
+        <div class="skill-level-container">
+            <div class="plus-container">
+                <h2 class="h2-label">set role level</h2>
+                <h2 class="plus lvl">level · {{ item_progress() }}%</h2>
+            </div>
+            <div class="progress-bar-container" 
+                #barContainer
+                (mousedown)="startDragging($event)"
+                (click)="updateProgress($event)">
+                <div class="bar" [style.width.%]="item_progress()"></div>
+            </div>
+        </div>
+
+        <!-- project input -->
+        <h2 class="h2-label">Link projects</h2>
+        <app-filter-input 
+            (onSelected)="handleProjectSelection($event)"
+            [options]="projectOptions()">
+        </app-filter-input>
+
+        @for(project of linkedProjects; track project.id){
+            <div class="project-container">
+                <div class="avatar-icon">
+                    <img [src]="bucket + project.icon || 'assets/images/tecs/code.png'">
+                </div>
+
+                <h1> {{ project.name }} </h1>
+
+                <div class="close-container" (click)="closeOnClick(project.id)">
+                    <img src="assets/images/svgs/xmark-solid-full.svg">
+                </div>
+            </div>
+        }  
+
+        <!-- submit -->
+        <div class="button-row">
+            <button matButton="filled" type="submit" [disabled]="roleForm.invalid">save</button>
+            <!-- <button matButton="filled" type="submit">Add</button> -->
+        </div>
+    </form>
+
+    <app-response-msg [success]="success" [error]="error" [reset]="resetMsg"></app-response-msg>
+</app-base-card>

@@ -1,0 +1,19 @@
+/* response */
+.response-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 0.2rem;
+    padding: 0;
+
+    /* width: 70vw; */
+}
+.response-container .text {
+    font-size: 15px;
+}
+.response-container .success {
+    color: #36dea1;
+}
+.response-container .error {
+    color: #e81123;
+}

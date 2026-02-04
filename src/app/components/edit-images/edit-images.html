@@ -1,0 +1,57 @@
+<app-base-card name="edit images" icon="assets/images/svgs/screwdriver-wrench-solid-full-green.svg">
+        <!-- project input -->
+        <h2 class="h2-label">select project</h2>
+        <app-filter-input [options]="projectOptions()" (onSelected)="handleProjectSelection($event)">
+        </app-filter-input>
+
+        @if(isProject){
+                <!-- upload photos -->
+                <h2 class="h2-label">Upload Photos</h2>
+
+                <div class="uploaded-container">
+                        @for (file of selectedPhotos; track file.name){
+                                @if(file.url) {
+                                        <div class="photo-container">
+                                                <img [src]="bucket + file.url" alt="">
+        
+                                                <h2>{{ file.name }}</h2>
+        
+                                                <div class="close-container" (click)="closeOnClick(file)">
+                                                        <img src="assets/images/svgs/xmark-solid-full.svg">
+                                                </div>
+                                        </div>
+                                }@else {
+                                        <div class="photo-container">
+                                                <img [src]="file.img" alt="">
+        
+                                                <h2>{{ file.name }}</h2>
+        
+                                                <div class="close-container" (click)="closeOnClick(file)">
+                                                        <img src="assets/images/svgs/xmark-solid-full.svg">
+                                                </div>
+                                        </div>
+                                }
+                        }
+                </div>
+
+                <div class="drop-zone" [class.drop-zone-active]="isDragging" (dragover)="onDragOver($event)"
+                        (dragleave)="onDragLeave()" (drop)="onDrop($event)" (click)="fileInput.click()">
+
+                        <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" accept="image/*"
+                                multiple>
+
+                     
+                        <img src="assets/images/svgs/image-solid-full.svg">
+                        <p>FILES</p>
+                </div>
+
+                <!-- submit -->
+                <div class="button-row">
+                        <button matButton="filled" type="button" (click)="onSubmit()">Save</button>
+                </div>
+         }
+
+
+
+        <app-response-msg [success]="success" [error]="error" [reset]="resetResponse"></app-response-msg>
+</app-base-card>

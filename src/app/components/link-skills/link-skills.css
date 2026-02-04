@@ -1,0 +1,56 @@
+:host {
+    --color-primary: #36DEA1;
+}
+/* submit-button */
+.button-row button {
+    background-color: var(--color-primary);
+}
+
+/*linked-projects*/
+:host {
+    --icon-width: 3.5rem;
+    --icon-height: 3.5rem;
+    --projects-mb: 0.5rem;
+}
+.project-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--projects-mb);
+}
+.project-container:hover {
+    background-color: var(--color-hover);
+}
+.project-container .avatar-icon {
+    background-color: var(--color-default);
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff80;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+.project-container .avatar-icon img {
+    height: 60%;
+    width: auto;
+    max-width: 100%;
+}
+.project-container h1 {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+    fill: var(--tc);
+}
+/* close-contianer */
+.close-container {
+    margin-left: auto;
+    cursor: pointer;
+}
+.close-container img{
+    width: 1.3rem;
+    height: auto;
+}

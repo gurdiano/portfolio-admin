@@ -1,0 +1,95 @@
+:host {
+    --color-primary: #36DEA1;
+    --color-plus-new: #61A9F4;   
+}
+
+img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.4rem;
+}
+/* plus-container */
+.new {
+    color: var(--color-plus-new);
+}
+.new:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.lvl {
+    color: var(--color-highlight);
+    background-color: #291E15;
+}
+/* skill level */
+.skill-level-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+}
+/* bar */
+.progress-bar-container {
+    background-color: var(--color-default);
+    height: 3.2rem;
+    /* flex: 1; */
+    border: 1px solid var(--color-default);
+}
+.progress-bar-container .bar{
+    height: 100%;
+    width: 0;
+    background-color: var(--color-highlight);
+    /* transition: width 1s ease-in-out; */
+}
+/*linked-projects*/
+:host {
+    --icon-width: 3.5rem;
+    --icon-height: 3.5rem;
+    --projects-mb: 0.5rem;
+}
+.project-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--projects-mb);
+}
+.project-container:hover {
+    background-color: var(--color-hover);
+}
+.project-container .avatar-icon {
+    background-color: var(--color-default);
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff80;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+.project-container .avatar-icon img {
+    height: 60%;
+    width: auto;
+    max-width: 100%;
+}
+.project-container h1 {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+    fill: var(--tc);
+}
+/* close-contianer */
+.close-container {
+    margin-left: auto;
+    cursor: pointer;
+}
+.close-container img{
+    width: 1.3rem;
+    height: auto;
+}
+/* submit-button */
+.button-row button {
+    background-color: var(--color-primary);
+}

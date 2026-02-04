@@ -1,0 +1,44 @@
+<mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+
+    <input type="text"
+           placeholder="Ex: Angular, Docker..."
+           aria-label="Name"
+           matInput
+           [formControl]="control"
+           [matAutocomplete]="auto">
+
+    <mat-autocomplete [displayWith]="displayFn" #auto="matAutocomplete" (optionSelected)="handleSelection($event)">
+      @for (option of filteredOptions$ | async; track option) {
+        <mat-option [value]="option">
+            <!-- projects -->
+            @if (isProject){
+              <img [src]="bucket + option.icon || 'assets/images/tecs/code.png'"> 
+              <span>{{ option.name }}</span> 
+              <span> {{ option.id }}</span> 
+            }
+            
+            <!-- role -->
+            @if (isRole) {
+              <img [src]="bucket + option.role.icon.path || 'assets/images/tecs/code.png'"> 
+              <span>{{ option.role.name }}</span>
+            }
+
+            <!-- skill -->
+            @if (isSkill) {
+              <img [src]="bucket + option.tech.iconPath">
+              <span>{{ option.tech.name }}</span> 
+            }
+
+            <!-- tech and icon... -->
+            @if (isOther) {
+              @if (option.path){ <img [src]="bucket + option.path"> }
+              @else if (option.iconPath){ <img [src]="bucket + option.iconPath"> }
+              @else {<img src="assets/images/tecs/code.png">}
+              <span>{{ option.name }}</span> 
+            }
+        </mat-option>               
+      }
+    </mat-autocomplete>
+
+  </mat-form-field>
